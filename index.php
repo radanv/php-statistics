@@ -13,7 +13,6 @@
 <body>
 <noindex>
     <?php include 'core/users-registration.php'; ?>
-    <!-- page preloader starts here-->
     <div id="page-preloader">
         <div class="spinner">
             <div class="ball"></div>
@@ -27,6 +26,7 @@
 			    <span> <?php echo $validationResult ?> </span>
 			</div>
 		</div>
+		
 		<div class="main-section-stat-desc">
 			<div class="main-section-stat-desc-menu">
 			    <a href="#" ><img src="/includes/images/menuicon-small.png"></a>
@@ -186,18 +186,18 @@
                             <td style="width: 100px;">Date</td>
                             <td style="width: 100px;">Unique visitors</td>
                             <td style="width: 55px;">Views</td>
-                            <td>Link</td>
+                            <td>Domain</td>
                         </tr>
                             <?php echo $displayStatsData; ?>
                     </table>
                 </div>
 		</div>
 	</div>
-	</noindex>
     <link type="text/css" rel='stylesheet' href='/includes/css/main.css'>
     <script type='text/javascript' src="/includes/js/jquery.min.js"></script>
     <script type='text/javascript' src="/includes/js/knob-library.js"></script>
     <script type='text/javascript' src="/includes/js/jquery.knob.js"></script>
     <script type='text/javascript' src="/includes/js/main.js"></script>
+    </noindex>
 </body>
-</html> 
+</html>

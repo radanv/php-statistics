@@ -5,7 +5,6 @@ header('Content-type: text/html; charset=utf-8');
 $serverName = $_SERVER['SERVER_NAME'];
 $registrationPageUrl = $serverName."/client-registration-form.php";
 $currentURL = "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-dataVisitors();
 if($currentURL == $registrationPageUrl) {
     if(isset($_POST['client-login']) && is_numeric($_POST['Phone']) && !empty($_POST['Password'])){ 
         $clientPhone = $_POST['Phone'];
@@ -83,7 +82,7 @@ else{
         		<td>' . $row['date'] . '</td>
         		<td>' . $row['hosts'] . '</td>
         		<td>' . $row['views'] . '</td>
-        		<td><details><summary>Details</summary>' . $row['link'] . '</details></td>
+        		<td><details><summary>Details</summary>' . $row['domain'] . '</details></td>
         		</tr>';
     	//	}
     	}
@@ -107,6 +106,28 @@ else{
     	$PeriodUntil = 0;
     }
 }
+
+
+function dataBaseConn(){
+    //global $var;  
+    //if("Condition"){
+    //    $var = "01-01-11";
+    //}
+	$stcntr_host = "localhost"; // sql server
+	$stcntr_user = "vova_statuser"; // user login
+	$stcntr_password = "tJUdyu2Q8RTF"; // password
+	$stcntr_database = "vova_statistics"; // database name
+	
+	$db_stcntr = mysql_connect($stcntr_host, $stcntr_user, $stcntr_password) or die ("cant connect to data"); // Database SQL connection
+	mysql_select_db($stcntr_database); // server side
+	mysql_query('SET NAMES utf8');
+	mysql_query('SET CHARACTER SET utf8' );
+	mysql_query('SET COLLATION_CONNECTION="utf8_general_ci"' );
+}
+function dataBaseConnClose(){
+    mysql_close($db_stcntr);
+}
+
 function dataVisitors(){
     dataBaseConn();
     // Get visitors ip and date	
@@ -132,17 +153,17 @@ function dataVisitors(){
     }
     else
     {   
-        $arrayVisitor_ip = explode(",",$row['ip_address']);
-        $arrayDomain = explode(",",$row['domain']);
-        $arrayLink = explode(",",$row['link']);
+        $arrayVisitor_ip = explode(", ",$row['ip_address']);
+        $arrayDomain = explode(", ",$row['domain']);
+        $arrayLink = explode(", ",$row['link']);
         
         if (!in_array($domain, $arrayDomain)){
-            $domain = $domain.",".$row['domain'];
+            $domain = $row['domain'].", ".$domain;
             mysql_query("UPDATE `st-visitors` SET `domain`='$domain' WHERE `date`='$date'");
             echo $domain;
         }
         if (!in_array($link, $arrayLink)){
-            $link = $link.",".$row['link'];
+            $link = $row['link'].", ".$link;
             mysql_query("UPDATE `st-visitors` SET `link`='$link' WHERE `date`='$date'");
         }
         // if this user already was here
@@ -151,26 +172,11 @@ function dataVisitors(){
         }
         else
         {
-            $visitor_ip = $visitor_ip.",".$row['ip_address'];
+            $visitor_ip = $row['ip_address'].",".$visitor_ip;
             mysql_query("UPDATE `st-visitors` SET `hosts`=`hosts`+1,`views`=`views`+1, `ip_address`='$visitor_ip' WHERE `date`='$date'");
         }
     }
     dataBaseConnClose();
 }
-function dataBaseConn(){
-	$stcntr_host = ""; // sql server
-	$stcntr_user = ""; // user login
-	$stcntr_password = ""; // password
-	$stcntr_database = ""; // database name
-	
-	$db_stcntr = mysql_connect($stcntr_host, $stcntr_user, $stcntr_password) or die ("cant connect to data"); // Database SQL connection
-	mysql_select_db($stcntr_database); // server side
-	mysql_query('SET NAMES utf8');
-	mysql_query('SET CHARACTER SET utf8' );
-	mysql_query('SET COLLATION_CONNECTION="utf8_general_ci"' );
-}
-function dataBaseConnClose(){
-    mysql_close($db_stcntr);
-}
-
+dataVisitors();
 ?>
