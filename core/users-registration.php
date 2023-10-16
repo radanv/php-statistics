@@ -117,6 +117,7 @@ function dataBaseConn(){
 	$stcntr_user = ""; // user login
 	$stcntr_password = ""; // password
 	$stcntr_database = ""; // database name
+
 	
 	$db_stcntr = mysql_connect($stcntr_host, $stcntr_user, $stcntr_password) or die ("cant connect to data"); // Database SQL connection
 	mysql_select_db($stcntr_database); // server side
