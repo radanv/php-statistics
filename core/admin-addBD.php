@@ -46,10 +46,17 @@ header('Content-type: text/html; charset=utf-8');
 $sec = 3;
 $page = "http://statistics.services.hosting-israel.co.il/core/admin-addBD.php";
 
+<<<<<<< HEAD
 $mysql_host = ""; // sql сервер
 $mysql_user = ""; // пользователь
 $mysql_password = ""; // пароль
 $mysql_database = ""; // имя базы данных c
+=======
+$mysql_host = "localhost"; // sql сервер
+$mysql_user = "vova_statadmin"; // пользователь
+$mysql_password = "DMF2Ne0pc37-"; // пароль
+$mysql_database = "vova_statistics"; // имя базы данных c
+>>>>>>> 6d290e6cef54675fa3f49b74dda832642971289b
 
 $db_ad = mysql_connect($mysql_host, $mysql_user, $mysql_password); // коннект к серверу SQL
 mysql_select_db($mysql_database); // коннект к БД на сервере
