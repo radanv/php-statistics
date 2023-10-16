@@ -1,0 +1,50 @@
+@font-face{font-family:'sambaregular';src:url('../fonts/Samba-webfont.eot');src:url('../fonts/Samba-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Samba-webfont.woff') format('woff'),
+    url('../fonts/Samba-webfont.ttf') format('truetype'),
+    url('../fonts/Samba-webfont.svg#sambaregular') format('svg');font-weight:normal;font-style:normal;}
+    body{margin:0px;padding:0px;background-color:#505163;font-family:sambaregular;font-weight:300;}
+    button{border:none;border-bottom:3px solid #313038;font-family:sambaregular;}
+    .shadow-stat{-webkit-box-shadow:0px 5px 10px 0px rgba(0,0,0,0.5);-moz-box-shadow:0px 5px 10px 0px rgba(0,0,0,0.5);box-shadow:0px 5px 10px 0px rgba(0,0,0,0.5);}
+    .main-section-stat{width:560px;margin:0px auto;padding:0px;}
+    .stat-head-login{color:#fff;padding:7px;text-align:right;}
+    .main-section-stat-head{height:35px;background-color:#212025;}
+    .main-section-stat-desc{height:60px;background-color:#313038;}
+    .main-section-stat-desc-menu{height:40px;padding:10px;}
+    .main-section-stat-desc-menu a{display:block;width:40px;height:40px;float:left;}
+    .main-section-stat-desc-menu img{width:30px;padding:5px;}
+    .main-section-stat-desc-menu h1{margin:0px;float:left;padding:3px 10px;color:#fff;}
+    .main-section-stat-desc-search{float:right;width:40px;height:40px;}
+    .main-section-stat-desc-search a{display:block;float:left;}
+    .main-section-stat-desc-search img{width:20px;padding:10px;}
+    .main-section-stat-body{height:500px;background-color:#212026;}
+    div.section-stat-desc-menu-tabs{overflow:hidden;background-color:#313038;}
+    div.section-stat-desc-menu-tabs button{background-color:inherit;float:left;outline:none;cursor:pointer;padding:10px 0px;transition:0.3s;font-size:20px;color:#fff;width:140px;font-weight:300;}
+    div.section-stat-desc-menu-tabs button:hover{border-bottom:3px solid #eeb11d;}
+    div.section-stat-desc-menu-tabs button.active{border-bottom:3px solid #e63937;}
+    .desc-menu-tabcontent{width:90%;margin:0px auto;padding:20px 0px;height:200px;}
+    .desc-tabcontent-graph{width:200px;height:200px;float:left;}
+    .desc-tabcontent-graph-skin{width:200px;height:200px;position:absolute;z-index:1001;}
+    canvas{position:absolute;}
+    #knob-red-circle canvas{}
+    #knob-yellow-circle canvas{padding:18px;}
+    #knob-blue-circle canvas{padding:35px;}
+    .desc-tabcontent-section{width:250px;height:200px;float:right;}
+    .desc-tabcontent-red{height:45px;margin-bottom:20px;border-bottom:2px solid #e63937;}
+    .desc-tabcontent-red span{color:#fff;float:left;padding:1px 20px;font-size:18px;font-weight:600;}
+    .desc-tabcontent-red p{width:9px;height:9px;background-color:#e63937;border-radius:50%;margin:7px;float:left;}
+    .desc-tabcontent-yellow{height:45px;margin-bottom:20px;border-bottom:2px solid #eeb11d;}
+    .desc-tabcontent-yellow span{color:#fff;float:left;padding:1px 20px;font-size:18px;font-weight:600;}
+    .desc-tabcontent-yellow p{width:9px;height:9px;background-color:#eeb11d;border-radius:50%;margin:7px;float:left;}
+    .desc-tabcontent-blue{height:45px;margin-bottom:20px;border-bottom:2px solid #21a295;}
+    .desc-tabcontent-blue span{color:#fff;float:left;padding:1px 20px;font-size:18px;font-weight:600;}
+    .desc-tabcontent-blue p{width:9px;height:9px;background-color:#21a295;border-radius:50%;margin:7px;float:left;}
+    .month-chart-graph{position: absolute;display: block;width:555px;border-top: 2px solid #ee5b00;color: #fff;height: 200px;overflow: hidden;overflow-y: scroll;text-align: right;margin: 3px;}
+    /*blue:26559b;  green:#0d833e*/
+    .chart-graph-table{padding: 10px;width: 100%;border-collapse: collapse;margin: 10px 0px 10px;font-size: 15px;}
+    .chart-graph-table td{border: 2px solid grey;padding: 3px;}
+    .main-section-stat-footer{height:50px;background-color:#313038;}
+    .statistics-main-red{color:#e63937;}
+    .statistics-main-blue{color:#21a295;}
+    .statistics-main-yellow{color:#eeb11d;}
+    .color-grey{color:grey !important;}
+    .float-right{float:right !important;}
